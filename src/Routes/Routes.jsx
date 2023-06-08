@@ -15,6 +15,7 @@ import Payment from "../Pages/DashboardPages/StudentsDashboard/Payment";
 import PaymentHistory from "../Pages/DashboardPages/StudentsDashboard/PaymentHistory";
 import AllClassess from "../Pages/ClassessPage/AllClassess";
 import AllInstructor from "../Pages/InstructorPage/AllInstructor";
+import PrivateRoutes from "./PrivateRoutes";
 
 
 export const router = createBrowserRouter([
@@ -50,7 +51,7 @@ export const router = createBrowserRouter([
     },
     {
       path:'dashboard',
-      element:<Dashboard></Dashboard>,
+      element:<PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
       children:[
 
         // Admin DashBoard
@@ -70,7 +71,7 @@ export const router = createBrowserRouter([
         },
         {
           path:'myclass',
-          element:<MyClass></MyClass>
+          element:<PrivateRoutes><MyClass></MyClass></PrivateRoutes>
         },
 
         // Students DashBoard

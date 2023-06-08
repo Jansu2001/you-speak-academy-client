@@ -9,7 +9,7 @@ const Dashboard = () => {
 
     const isAdmin = false;
     // const [isAdmin]=useAdmin()
-    const isInstructor = true;
+    const isInstructor = false;
 
 
     return (
@@ -52,8 +52,6 @@ const Dashboard = () => {
                <li><NavLink to='/dashboard/enrollclass'><FaCalendar></FaCalendar>My Enrolled Classes</NavLink></li>
               </>
             }
-
-            
             <div className="divider"></div>
             <li><NavLink to='/'><FaHome></FaHome>Home</NavLink></li>
           </ul>

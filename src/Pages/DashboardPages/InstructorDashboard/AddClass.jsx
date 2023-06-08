@@ -11,8 +11,9 @@ const AddClass = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    const { price, className,insEmail,insName,photoURL } = data;
-    const newClasses = { insName, price: parseFloat(price), className, insEmail,photoURL };
+
+    const { price, className,insEmail,insName,photoURL,seats } = data;
+    const newClasses = { insName,seats:parseFloat(seats), price: parseFloat(price), className, insEmail,photoURL,status:'Pending' };
     console.log(newClasses);
     axiosSecure.post("/addclass", newClasses)
     .then((data) => {
@@ -23,7 +24,7 @@ const AddClass = () => {
     });
   };
 
-  
+
   return (
     <div className="pt-10 ">
       <form
