@@ -13,7 +13,7 @@ const AddClass = () => {
     console.log(data);
 
     const { price, className,insEmail,insName,photoURL,seats } = data;
-    const newClasses = { insName,seats:parseFloat(seats), price: parseFloat(price), className, insEmail,photoURL,status:'Pending' };
+    const newClasses = { insName,seats:parseFloat(seats), price: parseFloat(price), className, email:insEmail,photoURL,status:'Pending' };
     console.log(newClasses);
     axiosSecure.post("/addclass", newClasses)
     .then((data) => {
@@ -45,11 +45,11 @@ const AddClass = () => {
                 Pick One
               </option>
               <option>English</option>
-              <option>Bangla</option>
+              <option>Arabic</option>
               <option>Hindi</option>
-              <option>Urdu</option>
-              <option>Turkish</option>
-              <option>French</option>
+              <option>Chinese</option>
+              <option>Italian</option>
+              <option>Japanese</option>
               </select>
           </div>
           <div className="form-control w-1/2 ">

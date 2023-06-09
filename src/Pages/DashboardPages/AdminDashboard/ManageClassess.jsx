@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { useState } from "react";
+// import { useState } from "react";
 import Swal from "sweetalert2";
 
 const ManageClassess = () => {
@@ -10,10 +10,10 @@ const ManageClassess = () => {
       });
 
 
-      const [disabled,setDisabled]=useState(true)
+      console.log(classess);
 
       const handleApproved = (classes) => {
-        fetch(`http://localhost:5000/addclass/status/${classes._id}`, {
+        fetch(`http://localhost:5000/addclass/status/approved/${classes._id}`, {
           method: "PATCH",
         })
           .then((res) => res.json())
@@ -24,8 +24,9 @@ const ManageClassess = () => {
             }
           });
       };
+
       const handleDeny = (classes) => {
-        fetch(`http://localhost:5000/addclass/status/${classes._id}`, {
+        fetch(`http://localhost:5000/addclass/status/deny/${classes._id}`, {
           method: "PATCH",
         })
           .then((res) => res.json())
@@ -36,6 +37,11 @@ const ManageClassess = () => {
             }
           });
       };
+
+
+      const handleFeedback=()=>{
+        // 
+      }
 
 
     return (
@@ -71,15 +77,15 @@ const ManageClassess = () => {
         <td>
          {classes.insName}
           <br/>
-          <span className="badge badge-ghost badge-sm">{classes.insEmail}</span>
+          <span className="badge badge-ghost badge-sm">{classes.email}</span>
         </td>
         <td>{classes.seats}</td>
         <td>{classes.price}</td>
         <th>
           {/* <button className="btn btn-ghost btn-xs">{classes.status}</button> */}
-          <button onClick={()=> handleApproved(classes)} className="btn btn-ghost btn-xs"> {classes.status=='approved'? <span className="text-green-500">Approved</span> : 'Approved'}</button>
-          <button disabled={false} onClick={()=> handleDeny(classes)} className="btn btn-ghost btn-xs">{classes.role=='deny'? <span className="text-red-500">Deny</span> : 'Deny'}</button>
-          <button onClick={()=> handleFeedback(classes)} className="btn btn-ghost btn-xs">{classes.role=='feedback'? 'Feedback' : 'Feedback'}</button>
+          <button disabled={classes.status=='deny'} onClick={()=> handleApproved(classes)} className="btn btn-ghost btn-xs"> {classes.status=='approved'? <span className="text-green-500 font-bold">Approved</span> : 'Approved'}</button>
+           <button disabled={classes.status=='approved'} onClick={()=> handleDeny(classes)} className="btn btn-ghost btn-xs">{classes.status=='deny'? <span className="text-red-500"> Deny</span> : 'Deny'}</button>
+          <button disabled={classes.status=='approved' || classes.status=='deny'} onClick={()=> handleFeedback(classes)} className="btn btn-ghost btn-xs">{classes.role=='feedback'? 'Feedback' : 'Feedback'}</button>
         </th>
       </tr>)}
     </tbody>

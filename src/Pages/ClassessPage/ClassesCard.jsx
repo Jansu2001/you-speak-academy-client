@@ -1,11 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import Swal from "sweetalert2";
-import useAuth from "../../../Hooks/useAuth";
+import useAuth from "../../Hooks/useAuth";
 import { useNavigate } from "react-router-dom";
-import useAdmin from "../../../Hooks/useAdmin";
-import useInstructor from "../../../Hooks/useInstructor";
-import useAxiosSecure from "../../../Hooks/useAxiosSecure";
-const ClassessCard = ({classes}) => {
+import useAdmin from "../../Hooks/useAdmin";
+import useInstructor from "../../Hooks/useInstructor";
+const ClassesCard = ({classes}) => {
     const { user } = useAuth();
     const [isAdmin]=useAdmin()
     const [isInstructor]=useInstructor()
@@ -108,4 +108,4 @@ const ClassessCard = ({classes}) => {
     );
 };
 
-export default ClassessCard;
+export default ClassesCard;

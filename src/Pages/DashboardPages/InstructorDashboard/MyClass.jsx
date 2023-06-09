@@ -1,13 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
+import useAuth from "../../../Hooks/useAuth";
 
 const MyClass = () => {
-    const { data: classess = [],  } = useQuery(["class"], async () => {
-        const res = await fetch("http://localhost:5000/addclass");
+  const {user}=useAuth()
+    const { data: addedClass = [],  } = useQuery(["class"], async () => {
+        const res = await fetch(`http://localhost:5000/AddedClasses?email=${user?.email}`);
         return res.json();
       });
-
-
-      
 
     return (
         <div className="pt-16">
@@ -19,14 +18,14 @@ const MyClass = () => {
       <tr>
         <th>Image</th>
         <th>Class Name</th>
-        <th>Instructor Name & Email</th>
+        <th>Instructor Name</th>
         <th>Available Seats</th>
         <th>Price</th>
         <th>Status</th>
       </tr>
     </thead>
     <tbody >
-      {classess.map(classes=><tr  key={classes._id}>
+      {addedClass.map(classes=><tr  key={classes._id}>
         <td >
           <div className="flex items-center space-x-3">
             <div className="avatar">

@@ -43,7 +43,8 @@ const Register = () => {
           const savedUser = {
             name: data.name,
             email: data.email,
-            password: data.password
+            password: data.password,
+            photoURL:data.photoURL
           };
           axiosSecure.post('/users',savedUser)
             .then(data => {
