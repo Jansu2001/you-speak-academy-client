@@ -1,10 +1,12 @@
 import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
 import { useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 
 const SocialLogin = ({ setSuccess, setError }) => {
   const { loginWithGoogle, } =useAuth()
 
+  const [axiosSecure]=useAxiosSecure()
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
@@ -20,14 +22,7 @@ const SocialLogin = ({ setSuccess, setError }) => {
           name: loggeduser.displayName,
           email: loggeduser.email,
         };
-        fetch("http://localhost:5000/users", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(savedUser),
-        })
-          .then((res) => res.json())
+        axiosSecure.post("/users",savedUser)
           .then(() => {
             navigate(from, { replace: true });
           });
@@ -38,21 +33,6 @@ const SocialLogin = ({ setSuccess, setError }) => {
         console.log(error.message);
       });
   };
-//   const handleGitHub = () => {
-//     loginWithGitHub()
-//       .then((result) => {
-//         setError("");
-//         setSuccess("User SuccessFully Login with Github");
-//         const user = result.user;
-//         console.log(user);
-//         navigate(from, { replace: true });
-//       })
-//       .catch((error) => {
-//         setSuccess("");
-//         setError(error.message);
-//         console.log(error.message);
-//       });
-//   };
 
   return (
     <div className="text-center">

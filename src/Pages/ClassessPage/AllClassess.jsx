@@ -28,7 +28,8 @@ const AllClassess = () => {
         email: user?.email,
       };
 
-      axiosSecure.post("/selectedclass", selectedClass).then((data) => {
+      axiosSecure.post("/selectedclass", selectedClass)
+      .then((data) => {
         if (data.data.insertedId) {
           
           Swal.fire(

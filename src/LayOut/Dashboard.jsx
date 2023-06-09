@@ -7,7 +7,7 @@ const Dashboard = () => {
 
 
 
-    const isAdmin = false;
+    const isAdmin = true;
     // const [isAdmin]=useAdmin()
     const isInstructor = false;
 

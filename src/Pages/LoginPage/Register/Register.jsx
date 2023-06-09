@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import useAuth from "../../../Hooks/useAuth";
 import { useState } from "react";
 import SocialLogin from "../socialLogin/SocialLogin";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 
 const Register = () => {
   const [error,setError]=useState('')
@@ -18,6 +19,7 @@ const Register = () => {
   } = useForm();
 
   const navigate = useNavigate();
+  const [axiosSecure]=useAxiosSecure()
 
   const onSubmit = (data) => {
     console.log(data);
@@ -43,17 +45,9 @@ const Register = () => {
             email: data.email,
             password: data.password
           };
-          fetch('http://localhost:5000/users', {
-            method: "POST",
-            headers: {
-              'content-type': 'application/json'
-            },
-            body: JSON.stringify(savedUser)
-          })
-            .then(res => res.json())
+          axiosSecure.post('/users',savedUser)
             .then(data => {
-              console.log(data);
-              if (data.insertedId) {
+              if (data.data.insertedId) {
                 
                 reset();
                 Swal.fire(
