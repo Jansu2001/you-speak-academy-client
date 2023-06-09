@@ -11,6 +11,7 @@ const AllClassess = () => {
     const res = await fetch("http://localhost:5000/addclass");
     return res.json();
   });
+  const approvedClasses=classess.filter(classes=>classes.status==='approved')
 
   const navigate = useNavigate();
 
@@ -64,14 +65,14 @@ const AllClassess = () => {
             <tr>
               <th>Image</th>
               <th>Class Name</th>
-              <th>Instructor Name & Email</th>
+              <th>Instructor Name</th>
               <th>Available Seats</th>
               <th>Price</th>
               <th>Status</th>
             </tr>
           </thead>
           <tbody>
-            {classess.map((classes) => (
+            {approvedClasses.map((classes) => (
               <tr key={classes._id}>
                 <td>
                   <div className="flex items-center space-x-3">
@@ -88,7 +89,7 @@ const AllClassess = () => {
                 <th>{classes.className}</th>
                 <td>{classes.insName}</td>
                 <td>{classes.seats}</td>
-                <td>{classes.price}</td>
+                <td>${classes.price}</td>
                 <th>
                   <button
                     onClick={() => handleSelectClass(classes)}

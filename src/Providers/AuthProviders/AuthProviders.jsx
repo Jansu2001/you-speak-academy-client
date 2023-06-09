@@ -55,14 +55,12 @@ const AuthProviders = ({children}) => {
                 .then(data=>{
                     const jwtToken=data.data.token
                     localStorage.setItem('access-token', jwtToken)
-                    console.log(data.data.token);
                     setLoading(false)
                 })
             }else{
                 return localStorage.removeItem('access-token')
             }
             setLoading(false)
-            
         })
         return ()=>{
             return unSubscribe;

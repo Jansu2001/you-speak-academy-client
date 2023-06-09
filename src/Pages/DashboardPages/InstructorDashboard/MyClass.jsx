@@ -5,6 +5,10 @@ const MyClass = () => {
         const res = await fetch("http://localhost:5000/addclass");
         return res.json();
       });
+
+
+      
+
     return (
         <div className="pt-16">
 
@@ -37,9 +41,10 @@ const MyClass = () => {
          {classes.insName}
         </td>
         <td>{classes.seats}</td>
-        <td>{classes.price}</td>
-        <th>
-          <button className="btn btn-ghost btn-xs">{classes.status}</button>
+        <td>${classes.price}</td>
+        <th className={classes.status=== 'approved' ? "text-green-500": 'text-red-500'}>
+          {/* <button className="btn btn-ghost btn-xs"></button> */}
+          {classes.status}
         </th>
       </tr>)}
     </tbody>

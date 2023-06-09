@@ -27,7 +27,7 @@ const Header = () => {
       ? 
       <>
       {/* <li><NavLink className={({isActive})=>isActive?'text-orange-400 font-bold':''} to="/order/salad" title={user?.displayName}>Profile</NavLink></li> */}
-      <li className=""><img className="rounded-full w-20 h-20 " src={user.photoURL} alt="" /></li>
+      <li className=""><img className="rounded-full w-20 h-20 "title={user?.displayName} src={user.photoURL} alt="" /></li>
       <li><button onClick={handleLogOUt} className="btn btn-ghost text-red-400">LOG OUT</button></li>
       </>
       :

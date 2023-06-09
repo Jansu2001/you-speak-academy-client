@@ -1,6 +1,7 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { FaCalendar, FaHome, } from "react-icons/fa";
 import useAdmin from "../Hooks/useAdmin";
+import useInstructor from "../Hooks/useInstructor";
 
 const Dashboard = () => {
 
@@ -9,7 +10,10 @@ const Dashboard = () => {
 
     // const isAdmin = true;
     const [isAdmin]=useAdmin()
-    const isInstructor = false;
+    console.log(isAdmin);
+    const [isInstructor] = useInstructor()
+    // const isInstructor=false
+    console.log(isInstructor);
 
 
     return (
