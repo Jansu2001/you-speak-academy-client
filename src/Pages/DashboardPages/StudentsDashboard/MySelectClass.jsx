@@ -68,7 +68,7 @@ const MySelectClass = () => {
          {classes.insName}
         </td>
         <td>{classes.seats}</td>
-        <td>{classes.price}</td>
+        <td>${classes.price}</td>
         <th>
         <Link to='/dashboard/payment'>
           <button className="btn btn-outline  bg-sky-800 text-white  btn-sm">

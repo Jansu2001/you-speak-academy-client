@@ -9,6 +9,7 @@
  * 7. npm install   ( React-Query )
  * 8. npm install   ( Swiper-js )
  * 9. npm install   ( Json Web Token )
+ * 10.npm install   ( @stripe/react-stripe-js @stripe/stripe-js )
  * 
  * 
  * 
