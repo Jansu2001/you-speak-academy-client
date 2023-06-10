@@ -1,18 +1,31 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import { useState } from "react";
-import useAuth from "../../../../../../The-Final-Project-[ Bistro-Boss ]/bistro-boss-client/src/Hooks/useAuth";
+import { useEffect, useState } from "react";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import useAuth from "../../../Hooks/useAuth";
+import Swal from "sweetalert2";
 
-const CheckOut = () => {
+const CheckOut = ({totalPrice,selectedClass}) => {
+console.log(selectedClass);
+    const {user}=useAuth()
+    const [axiosSecure]=useAxiosSecure() 
 
-    // const {user}=useAuth()
+    
     const stripe=useStripe()
     const elements = useElements();
   const [cardError, setCardError] = useState("");
-    onst [clientSecret, setClientSecret] = useState("");
-
-    const [processing, setProcessing] = useState(false);
+    const [clientSecret, setClientSecret] = useState("");
     const [transactionId, setTransactionId] = useState("");
+    const [processing, setProcessing] = useState(false);
 
+
+    useEffect(() => {
+        if (totalPrice > 0) {
+          axiosSecure.post("/create-payment-intent", { totalPrice })
+          .then(res => {
+            setClientSecret(res.data.clientSecret);
+          });
+        }
+      }, [totalPrice, axiosSecure]);
 
 
     const handleSubmit = async (event)=>{
@@ -51,8 +64,33 @@ const CheckOut = () => {
         console.log(confirmError);
       }
       setProcessing(false);
-    }
 
+      if (paymentIntent.status === "succeeded") {
+        setTransactionId(paymentIntent.id);
+
+
+        const payment = {
+            email: user?.email,
+            transactionId: paymentIntent.id,
+            price: totalPrice,
+            date: new Date(),
+            course: selectedClass.className,
+            name:user?.displayName
+        }
+
+        axiosSecure.post("/payments", payment)
+        .then(res => {
+          console.log(res.data);
+          if (res.data.insertResult.acknowledged) {
+            Swal.fire(
+              "Payment Done!",
+              `${user?.displayName} Your Payment Success`,
+              "success"
+            );
+          }
+        });
+    }
+    }
 
     return (
         <div>
@@ -73,11 +111,17 @@ const CheckOut = () => {
           },
         }}
       />
-      <button type="submit" disabled={!stripe}>
+      <button type="submit" disabled={!stripe || clientSecret || processing}>
         Payment
       </button>
     </form>
     {cardError && <p className="text-red-600 ml-8">{cardError}</p>}
+    {transactionId && (
+        <p className="text-green-500">
+          {" "}
+          {user?.displayName} your Payment SuccessFull
+        </p>
+      )}
         </div>
     );
 };

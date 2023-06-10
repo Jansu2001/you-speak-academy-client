@@ -17,6 +17,7 @@ import AllClassess from "../Pages/ClassessPage/AllClassess";
 import AllInstructor from "../Pages/InstructorPage/AllInstructor";
 import PrivateRoutes from "./PrivateRoutes";
 import InstructorRoute from "./InstructorRoute";
+import useClass from "../Hooks/useClass";
 
 
 export const router = createBrowserRouter([
@@ -86,8 +87,9 @@ export const router = createBrowserRouter([
         },
         // Student Payment 
         {
-          path:'payment',
-          element:<Payment></Payment>
+          path:'payment/:id',
+          element:<Payment></Payment>,
+          loader: ({params}) => fetch(`http://localhost:5000/selectedclass/${params.id}`)
         },
         {
           path:'paymenthistroy',
