@@ -20,6 +20,7 @@ const MyClass = () => {
         <th>Class Name</th>
         <th>Instructor Name</th>
         <th>Available Seats</th>
+        <th>Enrolled Students</th>
         <th>Price</th>
         <th>Status</th>
       </tr>
@@ -40,6 +41,7 @@ const MyClass = () => {
          {classes.insName}
         </td>
         <td>{classes.seats}</td>
+        <td>{classes.enroll}</td>
         <td>${classes.price}</td>
         <th className={classes.status=== 'approved' ? "text-green-500": 'text-red-500'}>
           {/* <button className="btn btn-ghost btn-xs"></button> */}

@@ -16,8 +16,6 @@ import PaymentHistory from "../Pages/DashboardPages/StudentsDashboard/PaymentHis
 import AllClassess from "../Pages/ClassessPage/AllClassess";
 import AllInstructor from "../Pages/InstructorPage/AllInstructor";
 import PrivateRoutes from "./PrivateRoutes";
-import InstructorRoute from "./InstructorRoute";
-import useClass from "../Hooks/useClass";
 
 
 export const router = createBrowserRouter([

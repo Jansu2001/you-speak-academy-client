@@ -11,13 +11,13 @@ const ClassesCard = ({classes}) => {
     const [isInstructor]=useInstructor()
   
     const [axiosSecure] = useAxiosSecure();
-    const { data: classess = [] } = useQuery(["class"], async () => {
-      const res = await fetch("http://localhost:5000/addclass");
-      return res.json();
-    });
+  //   const { data: classess = [] } = useQuery(["class"], async () => {
+  //     const res = await fetch("http://localhost:5000/addclass");
+  //     return res.json();
+  //   });
   
-    const approvedClasses=classess.filter(classes=>classes.status==='approved')
-  console.log(approvedClasses);
+  //   const approvedClasses=classess.filter(classes=>classes.status==='approved')
+  // // console.log(approvedClasses);
     const navigate = useNavigate();
   
     const handleSelectClass = (selectClass) => {

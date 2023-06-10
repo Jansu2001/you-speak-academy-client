@@ -5,7 +5,6 @@ import useAuth from "../../../Hooks/useAuth";
 import Swal from "sweetalert2";
 
 const CheckOut = ({totalPrice,selectedClass}) => {
-console.log(selectedClass);
     const {user}=useAuth()
     const [axiosSecure]=useAxiosSecure() 
 
@@ -22,6 +21,7 @@ console.log(selectedClass);
         if (totalPrice > 0) {
           axiosSecure.post("/create-payment-intent", { totalPrice })
           .then(res => {
+            console.log(res.data.clientSecret);
             setClientSecret(res.data.clientSecret);
           });
         }
@@ -80,8 +80,8 @@ console.log(selectedClass);
 
         axiosSecure.post("/payments", payment)
         .then(res => {
-          console.log(res.data);
-          if (res.data.insertResult.acknowledged) {
+          console.log(res);
+          if (res.data.insertedId) {
             Swal.fire(
               "Payment Done!",
               `${user?.displayName} Your Payment Success`,
@@ -111,7 +111,7 @@ console.log(selectedClass);
           },
         }}
       />
-      <button type="submit" disabled={!stripe || clientSecret || processing}>
+      <button className="btn btn-ghost" type="submit" disabled={!stripe || !clientSecret || processing}>
         Payment
       </button>
     </form>
