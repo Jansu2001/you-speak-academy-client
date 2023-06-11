@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet";
 import Banner from "../Banner/Banner";
 import Classess from "../Classess/Classess";
 import Instructor from "../Instructor/Instructor";
+import TopStudents from "../TopStudents/TopStudents";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <Banner></Banner>
       <Classess></Classess>
       <Instructor></Instructor>
+      <TopStudents></TopStudents>
       {/* TODO: one extra section */}
     </div>
   );

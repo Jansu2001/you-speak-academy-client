@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+
 import Swal from "sweetalert2";
 import useAuth from "../../../Hooks/useAuth";
 import { useNavigate } from "react-router-dom";
@@ -78,6 +78,7 @@ const ClassessCard = ({classes}) => {
           <div className="relative -top-14">
           <h1 className=" font-bold">Instructor: {classes.insName}</h1>
           <h1 className=" font-bold">Available Seats: {classes.seats}</h1>
+          <p className=" font-semibold">Enroll: {classes.enroll}</p>
           <h1 className=" text-2xl font-bold">Course: {classes.className}</h1>
           </div>
           
@@ -98,6 +99,7 @@ const ClassessCard = ({classes}) => {
               <div className="relative -top-14">
               <h1 className=" font-bold">Instructor: {classes.insName}</h1>
               <h1 className=" font-bold">Available Seats: {classes.seats}</h1>
+              <p className=" font-semibold">Enroll: {classes.enroll}</p>
               <h1 className=" text-2xl font-bold">Course: {classes.className}</h1>
               </div>
               

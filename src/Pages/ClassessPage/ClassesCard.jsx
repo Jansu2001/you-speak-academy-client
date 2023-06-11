@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 import useAuth from "../../Hooks/useAuth";
@@ -11,22 +11,16 @@ const ClassesCard = ({classes}) => {
     const [isInstructor]=useInstructor()
   
     const [axiosSecure] = useAxiosSecure();
-  //   const { data: classess = [] } = useQuery(["class"], async () => {
-  //     const res = await fetch("http://localhost:5000/addclass");
-  //     return res.json();
-  //   });
-  
-  //   const approvedClasses=classess.filter(classes=>classes.status==='approved')
-  // // console.log(approvedClasses);
     const navigate = useNavigate();
   
     const handleSelectClass = (selectClass) => {
-      const { _id, insName, seats, price, className, photoURL } = selectClass;
+      const { _id, insName, seats, price, className,enroll, photoURL } = selectClass;
       if (user && user?.email) {
         const selectedClass = {
           classId: _id,
           insName,
           seats: parseFloat(seats),
+          enroll:enroll,
           price,
           className,
           photoURL,
@@ -78,6 +72,7 @@ const ClassesCard = ({classes}) => {
           <div className="relative -top-14">
           <h1 className=" font-bold">Instructor: {classes.insName}</h1>
           <h1 className=" font-bold">Available Seats: {classes.seats}</h1>
+          <p className=" font-semibold">Enroll: {classes.enroll}</p>
           <h1 className=" text-2xl font-bold">Course: {classes.className}</h1>
           </div>
           
@@ -97,7 +92,8 @@ const ClassesCard = ({classes}) => {
             </div>
               <div className="relative -top-14">
               <h1 className=" font-bold">Instructor: {classes.insName}</h1>
-              <h1 className=" font-bold">Available Seats: {classes.seats}</h1>
+              <h1 className=" font-semibold">Available Seats: {classes.seats}</h1>
+              <p className=" font-semibold">Enroll: {classes.enroll}</p>
               <h1 className=" text-2xl font-bold">Course: {classes.className}</h1>
               </div>
               

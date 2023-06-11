@@ -8,6 +8,7 @@ const AllClassess = () => {
   });
 
   const approvedClasses=classess.filter(classes=>classes.status==='approved')
+  console.log('approvedClasses',approvedClasses);
   return (
     <div className="pt-16 p-2">
 

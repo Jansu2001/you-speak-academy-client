@@ -8,6 +8,7 @@
  * 6. npm install   ( react-helmet )
  * 7. npm install   ( React-Query )
  * 8. npm install   ( Swiper-js )
+ * 8. npm install   (react-id-swiper swiper )
  * 9. npm install   ( Json Web Token )
  * 10.npm install   ( @stripe/react-stripe-js @stripe/stripe-js )
  * 

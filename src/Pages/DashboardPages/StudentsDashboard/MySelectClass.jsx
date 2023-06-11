@@ -6,6 +6,7 @@ import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 
 const MySelectClass = () => {
   const [selectedClass,refetch] = useClass();
+  console.log(selectedClass);
   const [axiosSecure]=useAxiosSecure()
 
   const handleDeleteClass =(classes)=>{
@@ -34,8 +35,8 @@ const MySelectClass = () => {
 
 
   return (
-    <div className="pt-16">
-      <h4>This Is My Selectede Classess:{selectedClass?.length} </h4>
+    <div className="p-5">
+      <h4 className="m-5 p-3 rounded-full text-white text-4xl mx-auto bg bg-cyan-700 w-1/2 font-bold text-center">Your Selected Classess: {selectedClass?.length} </h4>
       <div className="w-full">
       <div className="overflow-x-auto">
   <table className="table w-full">
@@ -53,11 +54,11 @@ const MySelectClass = () => {
     </thead>
     <tbody >
       {selectedClass.map(classes=><tr  key={classes._id}>
-        <th><button onClick={()=> handleDeleteClass(classes)} className="btn btn-sm"><FaTrashAlt></FaTrashAlt> </button></th>
+        <th><button onClick={()=> handleDeleteClass(classes)} className="btn btn-sm bg bg-red-800"><FaTrashAlt></FaTrashAlt> </button></th>
         <td >
           <div className="flex items-center space-x-3">
             <div className="avatar">
-              <div className="mask mask-squircle w-12 h-12">
+              <div className="mask rounded-lg w-20 h-20">
                 <img src={classes.photoURL} alt="Avatar Tailwind CSS Component" />
               </div>
             </div>
@@ -67,11 +68,11 @@ const MySelectClass = () => {
         <td>
          {classes.insName}
         </td>
-        <td>{classes.seats}</td>
-        <td>${classes.price}</td>
+        <td className="font-semibold">{classes.seats}</td>
+        <td className="font-semibold">${classes.price}</td>
         <th>
         <Link to={`/dashboard/payment/${classes._id}`}>
-          <button className="btn btn-outline  bg-sky-800 text-white  btn-sm">
+          <button className="btn btn-outline  bg-orange-950 text-white  btn-sm">
             Payment
 
           </button>

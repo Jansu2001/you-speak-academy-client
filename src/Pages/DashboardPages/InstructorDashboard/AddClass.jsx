@@ -13,8 +13,8 @@ const AddClass = () => {
     console.log(data);
 
     const { price, className,insEmail,insName,photoURL,seats } = data;
-    const newClasses = { insName,seats:parseFloat(seats),enroll: parseFloat(0) , price: parseFloat(price), className, email:insEmail,photoURL,status:'Pending' };
-    console.log(newClasses);
+    const newClasses = { insName,seats:parseFloat(seats),enroll: parseFloat(2) , price: parseFloat(price), className, email:insEmail,photoURL,status:'Pending' };
+  
     axiosSecure.post("/addclass", newClasses)
     .then((data) => {
       if (data.data.insertedId) {

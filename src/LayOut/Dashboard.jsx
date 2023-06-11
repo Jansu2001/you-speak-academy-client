@@ -6,6 +6,8 @@ import useInstructor from "../Hooks/useInstructor";
 const Dashboard = () => {
 
 
+  
+
 
 
     // const isAdmin = true;
@@ -54,6 +56,7 @@ const Dashboard = () => {
                    
               <li><NavLink to='/dashboard/selectclass'><FaHome></FaHome>Select Classes</NavLink></li>
                <li><NavLink to='/dashboard/enrollclass'><FaCalendar></FaCalendar>My Enrolled Classes</NavLink></li>
+               <li><NavLink to='/dashboard/paymenthistory'><FaCalendar></FaCalendar>Payment History</NavLink></li>
               </>
             }
             <div className="divider"></div>
