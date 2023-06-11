@@ -96,7 +96,7 @@ const CheckOut = ({ totalPrice, selectedClass }) => {
 
 
         // // TODO:-----------
-        fetch(`http://localhost:5000/enrolledclass/seats/${selectedClass._id}`, {
+        fetch(`http://localhost:5000/enrolledclass/seats/${selectedClass.classId}`, {
           method: "PATCH",
           headers:{
             'content-type':'application/json'
