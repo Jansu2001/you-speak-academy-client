@@ -27,7 +27,7 @@ const Header = () => {
       ? 
       <>
       {/* <li><NavLink className={({isActive})=>isActive?'text-orange-400 font-bold':''} to="/order/salad" title={user?.displayName}>Profile</NavLink></li> */}
-      <li className=""><img className="rounded-full w-20 h-20 "title={user?.displayName} src={user.photoURL} alt="" /></li>
+      <img className="rounded-full w-12 h-12 "title={user?.displayName} src={user.photoURL} alt="" />
       <li><button onClick={handleLogOUt} className="btn btn-ghost text-red-400">LOG OUT</button></li>
       </>
       :
@@ -38,7 +38,7 @@ const Header = () => {
     
   );
   return (
-    <div className="navbar bg-black text-white  fixed z-10 bg-opacity-30">
+    <div className="navbar bg-stone-700 text-white fixed z-10 bg-opacity-60">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">

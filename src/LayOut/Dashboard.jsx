@@ -2,11 +2,12 @@ import { NavLink, Outlet } from "react-router-dom";
 import { FaCalendar, FaHome, } from "react-icons/fa";
 import useAdmin from "../Hooks/useAdmin";
 import useInstructor from "../Hooks/useInstructor";
+import useAxiosSecure from "../Hooks/useAxiosSecure";
 
 const Dashboard = () => {
 
 
-  
+  const {user}=useAxiosSecure()
 
 
 
@@ -32,7 +33,7 @@ const Dashboard = () => {
           </label>
               <Outlet></Outlet>
         </div>
-        <div className="drawer-side bg-[#D1A054]">
+        <div className="drawer-side bg-gray-200">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
           <ul className="menu p-4 w-80  text-base-content">
 
@@ -53,7 +54,9 @@ const Dashboard = () => {
               </>
               ||
               <>
-                   
+                   <div>
+                    <img src={user?.photoURL} alt="" />
+                   </div>
               <li><NavLink to='/dashboard/selectclass'><FaHome></FaHome>Select Classes</NavLink></li>
                <li><NavLink to='/dashboard/enrollclass'><FaCalendar></FaCalendar>My Enrolled Classes</NavLink></li>
                <li><NavLink to='/dashboard/paymenthistory'><FaCalendar></FaCalendar>Payment History</NavLink></li>

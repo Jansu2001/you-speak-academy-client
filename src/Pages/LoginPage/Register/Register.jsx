@@ -124,12 +124,12 @@ const Register = () => {
                   <span className="label-text">Password</span>
                 </label>
                 <input
-                  type="text"
+                  type="password"
                   {...register("password", {
                     required: true,
                     minLength: 6,
                     maxLength: 14,
-                    // pattern:/(?=.*[A-Z])(?=.*[@$!%*?&])/
+                    pattern:/(?=.*[A-Z])^(?=.*[!@#$&*])/
                   })}
                   placeholder="Password"
                   className="input input-bordered rounded-none"
@@ -139,17 +139,17 @@ const Register = () => {
                     Password Must be 6 Characters up
                   </span>
                 )}
-                {/* {errors.password?.type === "pattern" && (
+                {errors.password?.type === "pattern" && (
                   <span className="text-red-400">
-                    Password Must be Have 1 UpperCase
+                    Password Must be Have 1 UpperCase , One Special Characters
                   </span>
-                )} */}
+                )}
                 <div className="form-control">
                 <label className="label">
                   <span className="label-text">Confirm Password</span>
                 </label>
                 <input
-                  type="text"
+                  type="password"
                   {...register("confirmPassword", { required: true })}
                   placeholder="Confirm Password"
                   className="input input-bordered rounded-none"

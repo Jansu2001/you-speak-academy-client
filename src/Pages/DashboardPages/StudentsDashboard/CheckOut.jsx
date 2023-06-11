@@ -96,7 +96,7 @@ const CheckOut = ({ totalPrice, selectedClass }) => {
 
 
         // // TODO:-----------
-        fetch(`http://localhost:5000/enrolledclass/seats/${selectedClass.classId}`, {
+        fetch(`http://localhost:5000/selectedclass/${selectedClass._id}`, {
           method: "PATCH",
           headers:{
             'content-type':'application/json'
@@ -105,7 +105,7 @@ const CheckOut = ({ totalPrice, selectedClass }) => {
         })
           .then((res) => res.json())
           .then((data) => {
-            if (data.modifiedCount) {
+            if (data.acknowledged) {
               console.log(data);
             }
           });

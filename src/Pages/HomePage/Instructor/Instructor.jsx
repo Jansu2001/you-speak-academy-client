@@ -11,7 +11,7 @@ const Instructor = () => {
   const totalInstructor=instructor.filter(classes=>classes.role==='instructor')
 console.log(totalInstructor);
   return (
-    <div className="mt-5">
+    <div className="p-5">
       <h1 className="text-3xl rounded-lg font-bold mx-auto text-center bg bg-green-300 p-3  lg:w-1/3">
         Popular Instructor
       </h1>

@@ -1,18 +1,17 @@
 import { useQuery } from "@tanstack/react-query";
+import useAuth from "../../../Hooks/useAuth";
 
 
 
 const MyEnrolledClass = () => {
   
 
+  const {user}=useAuth()
+  const { data: myEnrollClass = [],  } = useQuery(["class"], async () => {
+      const res = await fetch(`http://localhost:5000/enrollclass?email=${user?.email}`);
+      return res.json();
+    });
 
-  const { data: myEnrollClass = [] } = useQuery(["payment"], async () => {
-
-
-    // const res = await fetch(`http://localhost:5000/payment-history?email=${user?.email}`);
-    const res = await fetch(`http://localhost:5000/enrollclass`);
-    return res.json();
-  });
 
   return (
     <div className="p-5">

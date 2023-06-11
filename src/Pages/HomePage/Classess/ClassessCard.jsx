@@ -83,7 +83,7 @@ const ClassessCard = ({classes}) => {
           </div>
           
                     
-          <button disabled={isAdmin || isInstructor || classes.seats===0}  onClick={() => handleSelectClass(classes)} className="btn text-white border-none bg bg-gray-400 relative rounded-none rounded-bl-lg rounded-br-lg  -top-8 w-full font-bold ">{classes.seats===0 ? 'Course Full': 'Select Course'}</button>
+          <button disabled={isAdmin || isInstructor || classes.seats===0}  onClick={() => handleSelectClass(classes)} className="btn  border-none  bg bg-orange-400 relative rounded-none rounded-bl-lg rounded-br-lg -top-8 w-full font-bold text-stone-800 hover:bg-satle-700 hover:text-white">{classes.seats===0 ? 'Course Full': 'Select Course'}</button>
       </div> 
             :
             <div className= "border p-2 border-green-400 rounded-lg w-80 h-80 mt-20 hover:bg-cyan-400 -white transition duration-300 shadow-xl image-full" >
@@ -104,7 +104,7 @@ const ClassessCard = ({classes}) => {
               </div>
               
                         
-              <button disabled={isAdmin || isInstructor}  onClick={() => handleSelectClass(classes)} className="btn btn-primary border-none  bg bg-gray-400 relative rounded-none rounded-bl-lg rounded-br-lg -top-8 w-full font-bold text-stone-800">Select Course</button>
+              <button disabled={isAdmin || isInstructor || classes.seats===0 }  onClick={() => handleSelectClass(classes)} className="btn  border-none  bg bg-orange-400 relative rounded-none rounded-bl-lg rounded-br-lg -top-8 w-full font-bold text-stone-800 hover:bg-satle-700 hover:text-white">Select Course</button>
           </div>}
         </div>
     );

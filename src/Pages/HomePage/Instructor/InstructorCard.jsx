@@ -1,15 +1,17 @@
-
-const InstructorCard = ({instructor}) => {
-    return (
-        <div className="border border-green-400 rounded-lg   shadow-xl image-full">
-        <div className="text-center">
-         <img className="mx-auto h-60 rounded-full w-1/2" src={instructor?.photoURL}  alt="" />
-          <h1 className="my-auto mx-auto text-3xl font-bold">
-            {instructor.name}
-          </h1>
-        </div>
-      </div>
-    );
+const InstructorCard = ({ instructor }) => {
+  console.log(instructor);
+  
+  return (
+    <div>
+     
+     <div className="card w-96 bg-base-100 shadow-xl   relative  overflow-hidden bg-cover bg-no-repeat">
+  <div className="">
+    <h2 className="text-2xl font-bold m-2 text-center">{instructor.name}</h2>
+  </div>
+  <figure><img className=" h-80 w-full rounded-lg transition duration-300 ease-in-out hover:scale-110" src={instructor.photoURL} alt="Shoes" /></figure>
+</div>
+    </div>
+  );
 };
 
 export default InstructorCard;

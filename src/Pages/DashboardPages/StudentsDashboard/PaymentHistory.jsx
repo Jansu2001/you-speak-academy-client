@@ -1,22 +1,24 @@
 import { useQuery } from "@tanstack/react-query";
-// import useAuth from "../../../Hooks/useAuth";
+import useAuth from "../../../Hooks/useAuth";
 
 const PaymentHistory = () => {
 
-    // const {user}=useAuth()
-    const { data: myPayments = [],  } = useQuery(["payment"], async () => {
-        // const res = await fetch(`http://localhost:5000/payment-history?email=${user?.email}`);
-        const res = await fetch(`http://localhost:5000/payment-history`);
-        return res.json();
-      });
+    
+  const {user}=useAuth()
+  const { data: myPayments = [],  } = useQuery(["class"], async () => {
+      const res = await fetch(`http://localhost:5000/paymenthistory?email=${user?.email}`);
+      return res.json();
+    });
+    
+      console.log(myPayments);
     return (
         <div>
-             <h4>This Is payment Histroy {myPayments.length}</h4>
+             <h4 className="m-5 p-3 rounded-full text-white text-4xl mx-auto uppercase  bg-gray-700 w-1/2 font-semibold text-center">This Is payment Histroy: {myPayments.length}</h4>
 
              <div className="overflow-x-auto">
   <table className="table w-full">
-    <thead>
-      <tr>
+    <thead className="bg bg-sky-500">
+      <tr >
         <th>#</th> 
         <th>Transaction-Id</th> 
         <th>Email</th> 
