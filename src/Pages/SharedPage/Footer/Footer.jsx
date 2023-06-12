@@ -21,7 +21,7 @@ const Footer = () => {
             </p>
           </div>
           <div className="">
-          <div>
+          {/* <div>
             <span className="footer-title">Social</span>
             <div className="grid grid-flow-col gap-4">
               <a>
@@ -58,12 +58,12 @@ const Footer = () => {
                 </svg>
               </a>
             </div>
-          </div>
+          </div> */}
           </div>
         </footer>
         <footer className="footer footer-center p-4 bg-[#151515] text-neutral-content">
           <div>
-            <p>Copyright © 2023 - All right reserved by Bistro Boss Ltd</p>
+            <p>Copyright © 2023 -You Speak Academy</p>
           </div>
         </footer>
       </div>

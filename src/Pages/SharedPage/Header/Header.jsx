@@ -1,11 +1,14 @@
 
 import {  Link, NavLink } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
+import useClass from "../../../Hooks/useClass";
+import { FaShoppingCart } from "react-icons/fa";
 // import { FaShoppingCart } from "react-icons/fa";
 
 const Header = () => {
 
   const {user,signInOutUser}=useAuth()
+  const [selectedClass]=useClass()
 
   const handleLogOUt=()=>{
     signInOutUser()
@@ -22,6 +25,10 @@ const Header = () => {
       <li><NavLink className={({isActive})=>isActive?'text-orange-400 font-bold':''} to="/">HOME</NavLink></li>
       <li><NavLink className={({isActive})=>isActive?'text-orange-400 font-bold':''} to="/allinstructor">INSTRUCTORS</NavLink></li>
       <li><NavLink className={({isActive})=>isActive?'text-orange-400 font-bold':''} to="/allclassess">CLASSESS</NavLink></li>
+      <li><NavLink className={({isActive})=>isActive?'text-orange-400 font-bold':''} to="/dashboard">
+          <FaShoppingCart className="w-5 h-5"></FaShoppingCart>
+            <span className="badge  badge-primary ">{selectedClass.length}</span>
+          </NavLink></li>
       <li><NavLink className={({isActive})=>isActive?'text-orange-400 font-bold':''} to="/dashboard">DASHBOARD</NavLink></li>
       {user 
       ? 

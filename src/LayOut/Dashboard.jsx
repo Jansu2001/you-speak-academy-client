@@ -2,12 +2,12 @@ import { NavLink, Outlet } from "react-router-dom";
 import { FaCalendar, FaHome, } from "react-icons/fa";
 import useAdmin from "../Hooks/useAdmin";
 import useInstructor from "../Hooks/useInstructor";
-import useAxiosSecure from "../Hooks/useAxiosSecure";
+import useAuth from "../Hooks/useAuth";
 
 const Dashboard = () => {
 
 
-  const {user}=useAxiosSecure()
+  const {user}=useAuth()
 
 
 
@@ -29,7 +29,7 @@ const Dashboard = () => {
             htmlFor="my-drawer-2"
             className="btn btn-primary drawer-button lg:hidden"
             >
-            Open drawer
+           Open Side
           </label>
               <Outlet></Outlet>
         </div>
@@ -42,21 +42,29 @@ const Dashboard = () => {
               &&
               
               <>
-                   
+                   <div className=" h-40 mb-20 mx-auto">
+                      <img className=" h-32 mx-auto w-32 rounded-full" src={user.photoURL} alt="" />
+                      <h2 className="font-semibold mt-5">Instructor: {user.displayName}</h2>
+                    </div>
               <li><NavLink to='/dashboard/addclass'><FaHome></FaHome>Add Classes</NavLink></li>
                <li><NavLink to='/dashboard/myclass'><FaCalendar></FaCalendar>My Classess</NavLink></li>
               </>
               ||
               isAdmin && <>
-                   
+                   <div className=" h-40 mb-20 mx-auto">
+                      <img className=" h-32 mx-auto w-32 rounded-full" src={user.photoURL} alt="" />
+                      <h2 className="font-semibold mt-5">Admin: {user.displayName}</h2>
+                    </div>
                    <li><NavLink to='/dashboard/manageclasses'><FaHome></FaHome>Manage Classess</NavLink></li>
                     <li><NavLink to='/dashboard/manageusers'><FaCalendar></FaCalendar>Manage users</NavLink></li>
               </>
               ||
               <>
-                   <div>
-                    <img src={user?.photoURL} alt="" />
-                   </div>
+                    <div className=" h-40 mb-20 mx-auto">
+                      <img className=" h-32 mx-auto w-32 rounded-full" src={user.photoURL} alt="" />
+                      <h2 className="font-semibold mt-5">Student: {user.displayName}</h2>
+                    </div>
+                
               <li><NavLink to='/dashboard/selectclass'><FaHome></FaHome>Select Classes</NavLink></li>
                <li><NavLink to='/dashboard/enrollclass'><FaCalendar></FaCalendar>My Enrolled Classes</NavLink></li>
                <li><NavLink to='/dashboard/paymenthistory'><FaCalendar></FaCalendar>Payment History</NavLink></li>

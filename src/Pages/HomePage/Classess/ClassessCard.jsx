@@ -21,12 +21,13 @@ const ClassessCard = ({classes}) => {
     const navigate = useNavigate();
   
     const handleSelectClass = (selectClass) => {
-      const { _id, insName, seats, price, className, photoURL } = selectClass;
+      const { _id, insName, seats, price, className, photoURL,enroll } = selectClass;
       if (user && user?.email) {
         const selectedClass = {
           classId: _id,
           insName,
           seats: parseFloat(seats),
+          enroll:enroll,
           price,
           className,
           photoURL,

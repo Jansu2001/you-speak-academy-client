@@ -5,7 +5,7 @@ import useAuth from "../../Hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 import useAdmin from "../../Hooks/useAdmin";
 import useInstructor from "../../Hooks/useInstructor";
-const ClassesCard = ({classes}) => {
+const ClassesCard = ({classes,refetch}) => {
     const { user } = useAuth();
     const [isAdmin]=useAdmin()
     const [isInstructor]=useInstructor()
@@ -31,7 +31,7 @@ const ClassesCard = ({classes}) => {
         axiosSecure.post("/selectedclass", selectedClass)
         .then((data) => {
           if (data.data.insertedId) {
-            
+            refetch()
             Swal.fire(
               "Selected!",
               `Congragulations ${user.displayName}`,

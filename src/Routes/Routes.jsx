@@ -16,12 +16,14 @@ import PaymentHistory from "../Pages/DashboardPages/StudentsDashboard/PaymentHis
 import AllClassess from "../Pages/ClassessPage/AllClassess";
 import AllInstructor from "../Pages/InstructorPage/AllInstructor";
 import PrivateRoutes from "./PrivateRoutes";
+import ErrorPage from "../Component/ErrorPage/ErrorPage";
 
 
 export const router = createBrowserRouter([
     {
       path: "/",
       element: <Main></Main>,
+      errorElement:<ErrorPage></ErrorPage>,
       children:[
         {
             path:'/',

@@ -90,11 +90,7 @@ const CheckOut = ({ totalPrice, selectedClass }) => {
             }
           });
 
-
         }
-
-
-
         // // TODO:-----------
         fetch(`http://localhost:5000/selectedclass/${selectedClass._id}`, {
           method: "PATCH",
@@ -110,7 +106,7 @@ const CheckOut = ({ totalPrice, selectedClass }) => {
             }
           });
           // ---------------------
-
+       
 
       });
     }

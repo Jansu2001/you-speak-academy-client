@@ -18,10 +18,6 @@ const StudentCard = ({ student }) => {
           </h2>
           <p className="font-bold">Course: {student.coursename}</p>
           </div>
-          {/* <div className="card-actions">
-            <div className="badge badge-outline">Score: {student.score}</div>
-            <div className="badge badge-outline">Products</div>
-          </div> */}
         </div>
       </div>
     </div>

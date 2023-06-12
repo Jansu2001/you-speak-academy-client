@@ -1,15 +1,22 @@
-
-const InstructorCard = ({instructor}) => {
-    return (
-        <div className="border border-green-400 rounded-lg w-72 h-80 hover:bg-cyan-400 -white transition duration-300 shadow-xl image-full">
-        <div className="text-center relative top-24">
-         <img className="relative -top-14" src={instructor?.photoURL}  alt="" />
-          <h1 className="my-auto mx-auto text-3xl font-bold">
+const InstructorCard = ({ instructor }) => {
+  return (
+    <div >
+      <div className="card w-96 bg-base-100 shadow-xl relative  overflow-hidden bg-cover bg-no-repeat">
+        <div className="">
+          <h2 className="text-2xl font-bold m-2 text-center">
             {instructor.name}
-          </h1>
+          </h2>
         </div>
+        <figure>
+          <img
+            className=" h-80 w-full rounded-lg transition duration-300 ease-in-out hover:scale-110"
+            src={instructor.photoURL}
+            alt="Shoes"
+          />
+        </figure>
       </div>
-    );
+    </div>
+  );
 };
 
 export default InstructorCard;

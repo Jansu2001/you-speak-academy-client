@@ -11,6 +11,7 @@ const Payment = () => {
     const selectedClass=useLoaderData()
     const total=selectedClass.price 
     const price=parseInt(total)
+    console.log('payment', selectedClass);
 
     return (
         <div className="text-center p-10">
