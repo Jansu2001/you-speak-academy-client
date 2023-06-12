@@ -22,7 +22,6 @@ const Register = () => {
   const [axiosSecure]=useAxiosSecure()
 
   const onSubmit = (data) => {
-    console.log(data);
     const email = data.email;
     const password = data.password;
     const confirmPassword = data.confirmPassword;
@@ -63,7 +62,6 @@ const Register = () => {
       })
       .catch((error) => {
         setError(error.message);
-        console.log(error);
       });
   };
 

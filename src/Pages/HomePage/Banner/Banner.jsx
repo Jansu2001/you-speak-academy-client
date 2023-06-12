@@ -55,7 +55,12 @@ const Banner = () => {
           />
           <div className="relative -top-60 text-white bg bg-gray-400 w-3/4 mx-auto rounded-full p-4 bg-opacity-50">
             <h2 className="text-5xl font-bold mb-4">Our Librarie</h2>
-            <p>Libraries are havens of knowledge and imagination. They provide access to a vast collection of books, resources, and digital materials. They foster learning, research, and community engagement, promoting literacy and lifelong learning for all.</p>
+            <p>
+              Libraries are havens of knowledge and imagination. They provide
+              access to a vast collection of books, resources, and digital
+              materials. They foster learning, research, and community
+              engagement, promoting literacy and lifelong learning for all.
+            </p>
           </div>
         </div>
         <div>
@@ -65,12 +70,60 @@ const Banner = () => {
           />
           <div className="relative -top-60 text-white bg bg-gray-400 w-3/4 mx-auto rounded-full p-4 bg-opacity-50">
             <h2 className="text-5xl font-bold mb-4">Our Student at Librarie</h2>
-            <p>Students studying at the library benefit from a quiet and conducive environment for focused learning. They have access to a wide range of resources, such as books, research materials, and technology, enhancing their academic pursuits and productivity.</p>
+            <p>
+              Students studying at the library benefit from a quiet and
+              conducive environment for focused learning. They have access to a
+              wide range of resources, such as books, research materials, and
+              technology, enhancing their academic pursuits and productivity.
+            </p>
           </div>
         </div>
       </Carousel>
 
-      
+      {/* <div className="carousel carousel-center rounded-box">
+        <div className="carousel-item">
+        <img
+            className=""
+            src="https://images.unsplash.com/photo-1548994423-77b5f16a22cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+          />
+        </div>
+        <div className="carousel-item">
+        <img
+            className=""
+            src="https://images.unsplash.com/photo-1583466478015-2dce6bf2f551?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+          />
+        </div>
+        <div className="carousel-item">
+        <img
+            className=""
+            src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=874&q=80"
+          />
+        </div>
+        <div className="carousel-item">
+          <img
+            src="/images/stock/photo-1494253109108-2e30c049369b.jpg"
+            alt="Pizza"
+          />
+        </div>
+        <div className="carousel-item">
+          <img
+            src="/images/stock/photo-1550258987-190a2d41a8ba.jpg"
+            alt="Pizza"
+          />
+        </div>
+        <div className="carousel-item">
+          <img
+            src="/images/stock/photo-1559181567-c3190ca9959b.jpg"
+            alt="Pizza"
+          />
+        </div>
+        <div className="carousel-item">
+          <img
+            src="/images/stock/photo-1601004890684-d8cbf643f5f2.jpg"
+            alt="Pizza"
+          />
+        </div>
+      </div> */}
     </div>
   );
 };

@@ -6,7 +6,7 @@ import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 
 const MySelectClass = () => {
   const [selectedClass,refetch] = useClass();
-  console.log(selectedClass);
+  
   const [axiosSecure]=useAxiosSecure()
 
   const handleDeleteClass =(classes)=>{
@@ -27,7 +27,6 @@ const MySelectClass = () => {
                 refetch()
                   Swal.fire("Deleted!", "Your Class has been deleted.", "success");
               }
-              console.log(data);
             });
         }
       });

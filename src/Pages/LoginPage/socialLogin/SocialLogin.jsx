@@ -17,7 +17,6 @@ const SocialLogin = ({ setSuccess, setError }) => {
         setError("");
         setSuccess("User SuccessFully Login with Google");
         const loggeduser = result.user;
-        console.log(loggeduser);
         const savedUser = {
           name: loggeduser.displayName,
           email: loggeduser.email,
@@ -30,7 +29,6 @@ const SocialLogin = ({ setSuccess, setError }) => {
       .catch((error) => {
         setSuccess("");
         setError(error.message);
-        console.log(error.message);
       });
   };
 

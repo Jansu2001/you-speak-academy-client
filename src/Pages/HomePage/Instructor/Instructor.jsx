@@ -9,7 +9,6 @@ const Instructor = () => {
   });
 
   const totalInstructor=instructor.filter(classes=>classes.role==='instructor')
-console.log(totalInstructor);
   return (
     <div className="p-5">
       <h1 className="text-3xl rounded-full font-bold mx-auto text-center bg bg-green-500 p-3  lg:w-1/3">

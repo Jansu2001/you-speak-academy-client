@@ -24,7 +24,6 @@ const Login = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
     const email = data.email;
     const password = data.password;
 
@@ -46,7 +45,6 @@ const Login = () => {
         navigate(from, { replace: true });
       })
       .catch((error) => {
-        console.log(error.message);
         setError(error.message);
       });
   };

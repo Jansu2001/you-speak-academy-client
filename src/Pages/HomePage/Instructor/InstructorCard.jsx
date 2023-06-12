@@ -1,5 +1,4 @@
 const InstructorCard = ({ instructor }) => {
-  console.log(instructor);
 
   return (
     <div>

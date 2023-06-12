@@ -10,7 +10,6 @@ const ManageClassess = () => {
       });
 
 
-      console.log(classess);
 
       const handleApproved = (classes) => {
         fetch(`http://localhost:5000/addclass/status/approved/${classes._id}`, {

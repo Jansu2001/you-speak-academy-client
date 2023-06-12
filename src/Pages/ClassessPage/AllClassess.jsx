@@ -2,13 +2,13 @@ import { useQuery } from "@tanstack/react-query";
 import ClassesCard from "./ClassesCard";
 
 const AllClassess = () => {
+
   const { data: classess = [],refetch } = useQuery(["class"], async () => {
     const res = await fetch("http://localhost:5000/addclass");
     return res.json();
   });
 
   const approvedClasses=classess.filter(classes=>classes.status==='approved')
-  console.log('approvedClasses',approvedClasses);
   return (
     <div className="pt-16 p-2">
 

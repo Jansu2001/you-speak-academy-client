@@ -10,7 +10,6 @@ const PaymentHistory = () => {
       return res.json();
     });
     
-      console.log(myPayments);
     return (
         <div>
              <h4 className="m-5 p-3 rounded-full text-white text-4xl mx-auto uppercase  bg-gray-700 w-1/2 font-semibold text-center">Your payment Histroy: {myPayments.length}</h4>

@@ -73,7 +73,6 @@ const CheckOut = ({ totalPrice, selectedClass }) => {
       };
 
       axiosSecure.post("/payments", payment).then((res) => {
-        console.log(res);
         if (res.data.insertResult.acknowledged) {
 
           Swal.fire(
@@ -84,7 +83,6 @@ const CheckOut = ({ totalPrice, selectedClass }) => {
 
           axiosSecure.post("/enrollClass", selectedClass)
           .then((res) => {
-            console.log(res.data);
             if (res.data.insertedId) {
               console.log(res.data);
             }
@@ -92,7 +90,7 @@ const CheckOut = ({ totalPrice, selectedClass }) => {
 
         }
         // // TODO:-----------
-        fetch(`http://localhost:5000/selectedclass/${selectedClass._id}`, {
+        fetch(`http://localhost:5000/selectedclass/${selectedClass.classId}`, {
           method: "PATCH",
           headers:{
             'content-type':'application/json'

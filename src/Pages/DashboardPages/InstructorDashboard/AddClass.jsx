@@ -10,7 +10,6 @@ const AddClass = () => {
   const {user}=useAuth()
 
   const onSubmit = (data) => {
-    console.log(data);
 
     const { price, className,insEmail,insName,photoURL,seats } = data;
     const newClasses = { insName,seats:parseFloat(seats),enroll: parseFloat(2) , price: parseFloat(price), className, email:insEmail,photoURL,status:'Pending' };
