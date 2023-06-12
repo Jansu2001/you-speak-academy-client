@@ -90,7 +90,7 @@ const CheckOut = ({ totalPrice, selectedClass }) => {
 
         }
         // // TODO:-----------
-        fetch(`http://localhost:5000/selectedclass/${selectedClass.classId}`, {
+        fetch(`https://final-assaignment-project-server.vercel.app/selectedclass/${selectedClass.classId}`, {
           method: "PATCH",
           headers:{
             'content-type':'application/json'

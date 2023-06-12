@@ -4,7 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 
 const Classess = () => {
   const { data: classess = [] } = useQuery(["class"], async () => {
-    const res = await fetch("http://localhost:5000/addclass");
+    const res = await fetch("https://final-assaignment-project-server.vercel.app/addclass");
     return res.json();
   });
 

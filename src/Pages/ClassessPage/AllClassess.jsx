@@ -4,7 +4,7 @@ import ClassesCard from "./ClassesCard";
 const AllClassess = () => {
 
   const { data: classess = [],refetch } = useQuery(["class"], async () => {
-    const res = await fetch("http://localhost:5000/addclass");
+    const res = await fetch("https://final-assaignment-project-server.vercel.app/addclass");
     return res.json();
   });
 

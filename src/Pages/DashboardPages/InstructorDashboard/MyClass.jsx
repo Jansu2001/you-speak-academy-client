@@ -4,7 +4,7 @@ import useAuth from "../../../Hooks/useAuth";
 const MyClass = () => {
   const {user}=useAuth()
     const { data: addedClass = [],  } = useQuery(["class"], async () => {
-        const res = await fetch(`http://localhost:5000/AddedClasses?email=${user?.email}`);
+        const res = await fetch(`https://final-assaignment-project-server.vercel.app/AddedClasses?email=${user?.email}`);
         return res.json();
       });
 

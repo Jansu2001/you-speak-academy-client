@@ -4,7 +4,7 @@ import StudentCard from "./StudentCard";
 const TopStudents = () => {
 
     const { data: students = []  } = useQuery(["student"], async () => {
-        const res = await fetch("http://localhost:5000/top-student");
+        const res = await fetch("https://final-assaignment-project-server.vercel.app/top-student");
         return res.json();
       });
 

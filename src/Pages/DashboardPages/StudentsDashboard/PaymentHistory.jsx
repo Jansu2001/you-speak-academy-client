@@ -6,7 +6,7 @@ const PaymentHistory = () => {
     
   const {user}=useAuth()
   const { data: myPayments = [],  } = useQuery(["class"], async () => {
-      const res = await fetch(`http://localhost:5000/paymenthistory?email=${user?.email}`);
+      const res = await fetch(`https://final-assaignment-project-server.vercel.app/paymenthistory?email=${user?.email}`);
       return res.json();
     });
     

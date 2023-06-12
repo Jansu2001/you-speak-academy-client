@@ -8,7 +8,7 @@ const MyEnrolledClass = () => {
 
   const {user}=useAuth()
   const { data: myEnrollClass = [],  } = useQuery(["class"], async () => {
-      const res = await fetch(`http://localhost:5000/enrollclass?email=${user?.email}`);
+      const res = await fetch(`https://final-assaignment-project-server.vercel.app/enrollclass?email=${user?.email}`);
       return res.json();
     });
 
