@@ -3,11 +3,11 @@
 A simple React app built with React & React Router Dom.
 
 ## Live Link
-Hosted in Netlify -> [Play Kids Zone](https://backend-database-11.web.app/)
+Hosted in Firebase -> [Play Kids Zone](https://youspeak-academy.web.app/)
 
 
 ## API 
-Vercel Repo -> [Vercel](https://play-kids-zone-server.vercel.app/)
+Vercel Repo -> [Vercel](https://final-assaignment-project-server.vercel.app/)
 
 
 ## Component 
@@ -21,4 +21,4 @@ Documentation Link -> [Link](https://reactrouter.com/en/main/start/overview)
 
 Icon -> [ReactIcon](https://react-icons.github.io/react-icons/)
 
-<!-- Lottie Animation -> [LottieFiles](https://lottiefiles.com/featured) -->
+Payment Implementition -> [LottieFiles](https://stripe.com/docs/js)
