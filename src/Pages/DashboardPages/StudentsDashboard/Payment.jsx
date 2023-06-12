@@ -16,9 +16,11 @@ const Payment = () => {
     return (
         <div className="text-center p-10">
              <h4 className="text-3xl font-bold">Please Proceed Your Payment</h4>
+             <div className="">
              <Elements stripe={stripePromise}>
                 <CheckOut totalPrice={price} selectedClass={selectedClass}></CheckOut>
              </Elements>
+             </div>
         </div>
     );
 };

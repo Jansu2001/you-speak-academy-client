@@ -112,34 +112,34 @@ const CheckOut = ({ totalPrice, selectedClass }) => {
 
   return (
     <div>
-      <form className="w-2/3" onSubmit={handleSubmit}>
+      <form className="w-full m-24 bg-[#183058] p-24  rounded-lg mx-auto" onSubmit={handleSubmit}>
         <CardElement
           options={{
             style: {
               base: {
                 fontSize: "16px",
-                color: "#424770",
+                color: "#C7D7F0",
                 "::placeholder": {
-                  color: "#aab7c4",
+                  color: "#C7D7F0",
                 },
               },
               invalid: {
-                color: "#9e2146",
+                color: "#C7D7F0",
               },
             },
           }}
         />
         <button
-          className="btn btn-primary"
+          className="btn bg-[#62450B] m-4 relative top-24"
           type="submit"
           disabled={!stripe || !clientSecret || processing}
         >
-          Payment
+          Payment Now
         </button>
       </form>
       {cardError && <p className="text-red-600 ml-8">{cardError}</p>}
       {transactionId && (
-        <p className="text-green-500">
+        <p className="text-green-500 relative -top-20 text-2xl">
           {" "}
           {user?.displayName} your Payment SuccessFull
         </p>

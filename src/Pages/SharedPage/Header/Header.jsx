@@ -29,10 +29,10 @@ const Header = () => {
           <FaShoppingCart className="w-5 h-5"></FaShoppingCart>
             <span className="badge  badge-primary ">{selectedClass.length}</span>
           </NavLink></li>
-      <li><NavLink className={({isActive})=>isActive?'text-orange-400 font-bold':''} to="/dashboard">DASHBOARD</NavLink></li>
       {user 
       ? 
       <>
+      <li><NavLink className={({isActive})=>isActive?'text-orange-400 font-bold':''} to="/dashboard">DASHBOARD</NavLink></li>
       {/* <li><NavLink className={({isActive})=>isActive?'text-orange-400 font-bold':''} to="/order/salad" title={user?.displayName}>Profile</NavLink></li> */}
       <img className="rounded-full w-12 h-12 "title={user?.displayName} src={user.photoURL} alt="" />
       <li><button onClick={handleLogOUt} className="btn btn-ghost text-red-400">LOG OUT</button></li>
