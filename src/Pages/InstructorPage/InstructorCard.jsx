@@ -6,7 +6,7 @@ const InstructorCard = ({ instructor }) => {
           <h2 className="text-2xl font-bold m-2 ">
             Name: {instructor.name}
           </h2>
-          <p className="m-2">Email: {instructor.email}</p>
+          <p className="m-2 font-semibold">Email: {instructor.email}</p>
         </div>
         <figure>
           <img
