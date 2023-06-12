@@ -46,7 +46,7 @@ const ManageClassess = () => {
     return (
         <div className="w-full mx-auto">
       <h3 className=" text-3xl font-semibold my-4">
-        Total Users: {classess.length}
+        Total Classes: {classess.length}
       </h3>
       <div className="overflow-x-auto">
   <table className="table w-full">

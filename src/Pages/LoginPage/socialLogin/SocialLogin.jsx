@@ -15,6 +15,7 @@ const SocialLogin = ({ setSuccess, setError }) => {
     loginWithGoogle()
       .then((result) => {
         setError("");
+        navigate(from, { replace: true });
         setSuccess("User SuccessFully Login with Google");
         const loggeduser = result.user;
         const savedUser = {
@@ -22,8 +23,7 @@ const SocialLogin = ({ setSuccess, setError }) => {
           email: loggeduser.email,
         };
         axiosSecure.post("/users",savedUser)
-          .then(() => {
-            navigate(from, { replace: true });
+        .then(() => {
           });
       })
       .catch((error) => {

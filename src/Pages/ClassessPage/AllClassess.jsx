@@ -12,7 +12,7 @@ const AllClassess = () => {
   return (
     <div className="pt-16 p-2">
 
-      <div className="p-4 grid grid-cols-1 ml-6 lg:ml-0 lg:grid-cols-4 gap-4">
+      <div className="p-4 grid grid-cols-1 ml-6 lg:ml-10 lg:grid-cols-3 gap-10 mb-10">
         {approvedClasses.map(classes=><ClassesCard key={classes._id} classes={classes} refetch={refetch}></ClassesCard>)}
       </div>
     </div>
